@@ -2,10 +2,6 @@ from django.shortcuts import render, redirect
 from .forms import TodoSearchForm
 import requests
 
-def index(request):
-    return render(request, 'todos/index.html')
-
-
 def todo_list(request):
     url = 'https://jsonplaceholder.typicode.com/todos'  # 接続先のapiのパスを指定
     form = TodoSearchForm(request.GET or None)
